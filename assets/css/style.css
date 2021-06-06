@@ -1,0 +1,194 @@
+/* 页面布局 */
+body {
+	background-color: #fafafa;
+	font-family: PingFangSC-Regular, "Microsoft Yahei-Regular", "Microsoft Yahei", Microsoft Sans Serif, sans-serif;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.container {
+	flex: 1 0 auto;
+}
+
+/* 顶部导航布局 */
+@media (max-width: 1024px) {
+	header>.mdui-toolbar {
+		padding: 0 !important;
+	}
+
+	header .mdui-toolbar>.mdui-typo-title {
+		margin: 0 !important;
+	}
+}
+
+/* 侧边菜单栏布局 */
+@media (min-width: 1024px) {
+	#left-drawer {
+		width: 288px !important;
+	}
+}
+
+#left-drawer.mdui-drawer-close {
+	-webkit-transform: translateX(-100%) !important;
+	transform: translateX(-100%) !important;
+}
+
+/* 侧边栏样式微调 */
+.sidebar .mdui-list-item-icon {
+	transform: scale(.875);
+}
+
+.sidebar .mdui-collapse-item-open .mdui-collapse-item-arrow {
+	transform: rotate(180deg) scale(.875);
+}
+
+.sidebar .mdui-list-item-content {
+	font-weight: 400;
+	font-size: 14px;
+}
+
+/* 顶部导航阴影调整 */
+body:not([class*="mdui-theme-primary-"]):not([class*="mdui-theme-layout-dark"]) .mdui-appbar {
+	-webkit-box-shadow: 0 0.3125rem 0.3125rem -0.3125rem rgba(0, 0, 0, 0.117);
+	box-shadow: 0 0.3125rem 0.3125rem -0.3125rem rgba(0, 0, 0, 0.117);
+}
+
+/* 卡片图高调整 */
+.article-card .mdui-card-media img {
+	max-height: 288px;
+	height: 288px;
+	object-fit: cover;
+}
+
+/* 半透明效果 */
+.rgba-card {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.rgba-card .mdui-color-grey-200 {
+	background-color: rgba(238, 238, 238, 0.8) !important;
+}
+
+/* 文字溢出处理 */
+.h-3x {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* 文章纸片样式修改 */
+.post .mdui-chip a {
+	color: #000;
+	text-decoration: none;
+}
+
+.post .mdui-chip-icon .mdui-icon {
+	position: initial;
+}
+
+/* 白色主题 */
+body:not([class*="mdui-theme-layout-dark"]):not([class*="mdui-theme-primary-"]) .mdui-toolbar[class*="mdui-color-"]:not(.mdui-color-transparent) .mdui-btn:hover {
+	background-color: rgba(0, 0, 0, .1) !important;
+}
+
+/* 夜间模式 */
+body.mdui-theme-layout-dark .mdui-card-media img {
+	filter: brightness(80%);
+}
+
+body.mdui-theme-layout-dark #footer,
+body.mdui-theme-layout-dark header.mdui-color-white {
+	background-color: #212121 !important;
+}
+
+body.mdui-theme-layout-dark #left-drawer,
+body.mdui-theme-layout-dark #nav-direction,
+body.mdui-theme-layout-dark #comments .respond,
+/* 评论表夜间调整 */
+body.mdui-theme-layout-dark .article-card .mdui-clearfix {
+	background-color: #424242 !important;
+}
+
+body.mdui-theme-layout-dark .pagination *,
+body.mdui-theme-layout-dark #comments .mdui-card-header,
+/* 评论 */
+body.mdui-theme-layout-dark #comments .mdui-card-primary,
+/* 评论 */
+body.mdui-theme-layout-dark .article-card .mdui-chip-title *,
+body.mdui-theme-layout-dark #left-drawer .mdui-card-header-title,
+body.mdui-theme-layout-dark #left-drawer .mdui-card-header-subtitle {
+	color: #fff !important;
+}
+
+/* 夜间半透明 */
+body.mdui-theme-layout-dark .rgba-card {
+	background-color: rgba(66, 66, 66, 0.8) !important;
+}
+
+
+/* 评论区调整 */
+.avatar-icon {
+	width: 33.33333%;
+	height: 33.33333%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTk0Mjk2OTAwOTA1IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjQ3NDgiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUxMiA1MTJtLTUxMiAwYTUxMiA1MTIgMCAxIDAgMTAyNCAwIDUxMiA1MTIgMCAxIDAtMTAyNCAwWiIgZmlsbD0iI0ZGRkZGRiIgcC1pZD0iNDc0OSI+PC9wYXRoPjxwYXRoIGQ9Ik01MTIgNTEybS00MTguOTA5MDkxIDBhNDE4LjkwOTA5MSA0MTguOTA5MDkxIDAgMSAwIDgzNy44MTgxODIgMCA0MTguOTA5MDkxIDQxOC45MDkwOTEgMCAxIDAtODM3LjgxODE4MiAwWiIgZmlsbD0iI0ZGQzYyRSIgcC1pZD0iNDc1MCI+PC9wYXRoPjxwYXRoIGQ9Ik00NzQuMTEyIDc2My45NTA1NDVhMzMuMjggMzMuMjggMCAwIDEtMTQuMDU2NzI3IDQuMDQ5NDU1IDIxLjAzODU0NSAyMS4wMzg1NDUgMCAwIDEtMjEuMzE3ODE4LTIwLjgwNTgxOCAxOS41NDkwOTEgMTkuNTQ5MDkxIDAgMCAxIDEuMjEwMTgxLTUuODY0NzI3bDQwLjQ5NDU0Ni0xODcuNDM4NTQ2LTE2Ny42NTY3MjcgMC4zMjU4MThhMjEuMjI0NzI3IDIxLjIyNDcyNyAwIDAgMS0yMS44NzYzNjQtMjAuODA1ODE4IDIwLjQzMzQ1NSAyMC40MzM0NTUgMCAwIDEgOS40OTUyNzMtMTYuODQ5NDU0bDI1MC4xODE4MTgtMjU1Ljc2NzI3M2M0LjYwOC0yLjc5MjcyNyA5LjU0MTgxOC00Ljc0NzYzNiAxNC42NjE4MTgtNC43OTQxODJhMjEuMTMxNjM2IDIxLjEzMTYzNiAwIDAgMSAyMS4zNjQzNjQgMjAuODUyMzY0IDE5Ljk2OCAxOS45NjggMCAwIDEtMi43OTI3MjggOS43NzQ1NDVsLTQwLjIxNTI3MiAxODQuMzJoMTY3Ljg0MjkwOWEyMS4xNzgxODIgMjEuMTc4MTgyIDAgMCAxIDIxLjY0MzYzNiAyMC44NTIzNjQgMjAuMjkzODE4IDIwLjI5MzgxOCAwIDAgMS05LjQ5NTI3MyAxNi45NDI1NDVsLTI0OS40ODM2MzYgMjU1LjIwODcyN3oiIGZpbGw9IiNGRkZGRkYiIHAtaWQ9IjQ3NTEiPjwvcGF0aD48L3N2Zz4=);
+}
+
+#comments .mdui-card-header {
+	height: auto;
+}
+
+#comments nav a::before,
+#nav-direction a::before,
+/* 上下篇文章 */
+#comments .mdui-card-menu a::before,
+#comment-form .mdui-text-right a::before {
+	height: 0;
+}
+
+@media (min-width:600px) {
+
+	#comments article .mdui-typo,
+	#comments .mdui-divider-inset,
+	#comments .comment-children .comments-list .comment-child {
+		margin-left: 52px;
+	}
+}
+
+@media (max-width:600px) {
+	#comments img.mdui-card-header-avatar {
+		width: 32px;
+		height: 32px;
+	}
+
+	#comments .comment-children img.mdui-card-header-avatar {
+		width: 28px;
+		height: 28px;
+	}
+
+	#comments article .mdui-typo,
+	#comments .mdui-divider-inset,
+	#comments .comment-body .mdui-card-header-title,
+	#comments .comment-body .mdui-card-header-subtitle {
+		margin-left: 42px;
+	}
+}
+
+#comments #OwO-logo,
+#comments #comment-reply-link,
+#comments #cancel-comment-reply-link {
+	min-width: auto;
+}
+
+#comments .comments-list .mdui-card-menu {
+	display: none;
+}
+
+#comments .comments-list article:hover .mdui-card-menu {
+	display: block;
+}
