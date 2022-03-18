@@ -565,7 +565,7 @@ class Tool
 	 * 
 	 * @return story
 	 */
-	public static function get_post_view($archive,$r=0)
+	public static function get_post_view($archive)
 	{
 		$cid  = $archive->cid;
 		$db = Typecho_Db::get();
@@ -590,9 +590,7 @@ class Tool
 				Typecho_Cookie::set('extend_contents_views', $views,';SameSite=None;Secure'); //记录查看cookie
 			}
 		}
-		if($r==0){
-			echo $row['views'];
-		}
+		echo $row['views'];
 	}
 
 	/**
