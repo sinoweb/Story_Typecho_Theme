@@ -569,6 +569,12 @@ class Tool
 	{
 		$cid  = $archive->cid;
 		$db = Typecho_Db::get();
+		$prefix = $db->getPrefix();
+		if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
+			$db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
+			echo 0;
+			return;
+		}
 		$row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
 		if ($archive->is('single')) {
 			$views = Typecho_Cookie::get('extend_contents_views');
