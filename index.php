@@ -5,7 +5,7 @@
  * @package Story
  * @author 小人物
  * @version 1.0
- * @link https://rainyew.com
+ * @link https://sinoweb.net
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
